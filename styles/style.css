@@ -11,7 +11,7 @@
 
 .header {
   inline-size: 100%;
-  max-inline-size: 100vh;
+  max-height: 100vh;
   min-block-size: 668px;
   display: grid;
   font-family: var(--primary-font);
@@ -114,7 +114,8 @@
 }
 
 .header__theme-menu-button:hover {
-  border: 1px solid rgba(255, 0, 112, 0.40);
+  border: 1px solid var(--accent-color);
+  padding: 2px 12px;
   cursor: pointer;
 }
 
@@ -139,6 +140,9 @@
   padding: 0 13px;
   height: 26px;
   border: 1px solid var(--accent-color);
+  border-inline-end: none;
+  border-inline-start: none;
+  border-block-start: none;
 }
 
 .page-block {
@@ -171,19 +175,25 @@
 }
 
 a {
-  text-shadow: 2px 2px 0 var(--accent-color-body);
+  text-shadow: 2px 2px var(--accent-color-body);
   text-decoration: none;
 }
 
+a:focus {
+  border: 1px solid var(--paragraph-color);
+}
+
 a:hover {
-  text-decoration: underline;
+  border: 1px solid var(--paragraph-color);
+  border-inline-end: none;
+  border-inline-start: none;
+  border-block-start: none;
+  
 }
 
 a:focus-visible {
   inline-size: 97px;
   block-size: 22px;
-  outline: 1px solid #343530;
-  text-decoration: none;
 }
 
 .main__page-block {
@@ -268,13 +278,14 @@ a:focus-visible {
     max-inline-size: 100dvw;
     min-block-size: 668px;
     padding: 14px;
+    margin-block-start: 20px;
   }
 
   .heading {
-    margin-block-start: 25px;
+    margin-block-start: 15px;
     min-inline-size: 335px;
     justify-self: start;
-    margin-inline-start: -2%;
+    margin-inline-start: -1%;
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   }
 
@@ -282,12 +293,14 @@ a:focus-visible {
     margin-block-end: 35px;
   }
 
-  .decorated-zone::before {
-    margin-right: 14px;
+  .decorated-zone::before{
+    margin-right: 10px;
+    margin-top: -20px;
   }
 
-  .small__element {
-    margin-right: 42px;
+  .small__element{
+    margin-right: 40px;
+    margin-top: -20px;
   }
 
   .decorated-zone::after {
@@ -296,8 +309,10 @@ a:focus-visible {
 
   .header__theme-menu-list {
     justify-self: end;
-    align-self: end;
-    margin-block-end: 2vh;
+    align-self: center;
+    gap: 15px;
+    margin-top: 20px;
+    text-align: end;
   }
 
   .page-block {
@@ -310,11 +325,11 @@ a:focus-visible {
     padding: 0 10px;
   }
 
-  .main-text {
+  .main-text{
     margin-block-end: 20px;
   }
 
-  .additional_indentation {
+  .additional_indentation{
     margin-block-start: 20px;
     margin-block-end: 20px;
   }
@@ -411,6 +426,10 @@ a:focus-visible {
     margin-block-start: 20px;
   }
 
+  .section-title {
+    margin-block-start: 20px;
+  }
+
   .main__page-block {
     --page-blok: 0 20px;
     padding: var(--page-blok);
@@ -420,7 +439,6 @@ a:focus-visible {
 
   .section-title {
     max-inline-size: 236px;
-    margin-block-start: 20px;
   }
 
   .information__page-block {
@@ -479,7 +497,7 @@ a:focus-visible {
   }
 
   .additional_indentation br {
-    display: none;
+      display: none;
   }
 
   .grid-images {
@@ -492,55 +510,30 @@ a:focus-visible {
     'music city city'; 
   }
 
-  .visual-sunset-picture {
-    grid-area: sunset;
-  }
-
-  .visual-sunset {
+  .image {
     object-fit: cover;
     width: 100%;
     height: 100%;
-    display: block;
+  }
+
+  .visual-sunset-picture {
+    grid-area: sunset;
   }
 
   .visual-music-picture {
     grid-area: music;
   }
 
-  .visual-music {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-  }
-
   .visual-food-picture {
     grid-area: food;
-  }
-
-  .visual-food {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
   }
 
   .visual-reading-picture {
     grid-area: reading;
   }
 
-  .visual-reading {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-  }
-
   .visual-city-picture {
     grid-area: city;
-  }
-
-  .visual-city {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
   }
 
   .footer {
@@ -575,9 +568,8 @@ a:focus-visible {
 @media (width >= 1024px) {
 
   .header {
-    max-inline-size: 100dvw;
     min-block-size: 768px;
-    --main-blok-padding: 20px;
+    margin-block-start: -20px;
   }
 
   .heading {
@@ -594,15 +586,10 @@ a:focus-visible {
 
   .decorated-zone::before {
     margin-right: 20px;
-    inset-block-start: 20px;
   }
   
   .decorated-zone::after {
     inset-block-start: 723px;
-  }
-
-  .small__element {
-    inset-block-start: 20px;
   }
 
   .header__theme-menu-list {
@@ -615,8 +602,6 @@ a:focus-visible {
 
   .page-block {
     grid-template-columns: 315px 1fr;
-    --page-blok: 0 20px;
-    padding: var(--page-blok);
     margin-block-start: 60px;
   }
 
@@ -635,19 +620,8 @@ a:focus-visible {
     max-inline-size: 315px;
   }
 
-  .main__page-block {
-    --page-blok: 0 20px;
-    padding: var(--page-blok);
-    margin-block-start: 40px;
-    gap: 0px;
-  }
-
   .information__page-block {
-    --page-blok: 0 20px;
-    padding: var(--page-blok);
-    display: grid;
     grid-template-columns: 315px 1fr;
-    margin-block-start:40px;
   }
 
   .information-block1 {
@@ -679,12 +653,6 @@ a:focus-visible {
     grid-row: 6;
     margin-block-start: -3.1%;
   }
-  
-  .page__block-content {
-    --page-blok: 0 20px;
-    padding: var(--page-blok);
-    margin-block-start: 40px;
-  }
 
   .note-text-text {
     margin-block-start: 20px;
@@ -711,76 +679,36 @@ a:focus-visible {
     'music city city';
   }
 
-  .visual-sunset-picture {
-    grid-area: sunset;
-  }
-
-  .visual-sunset {
+  .image {
     object-fit: cover;
     width: 100%;
     height: 100%;
-    display: block;
+  }
+
+  .visual-sunset-picture {
+    grid-area: sunset;
   }
 
   .visual-music-picture {
     grid-area: music;
   }
 
-  .visual-music {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-  }
-
   .visual-food-picture {
     grid-area: food;
-  }
-
-  .visual-food {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
   }
 
   .visual-reading-picture {
     grid-area: reading;
   }
 
-  .visual-reading {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-  }
-
   .visual-city-picture {
     grid-area: city;
   }
 
-  .visual-city {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-  }
-
   .footer {
     min-block-size: 768px;
-    --main-blok-padding: 20px;
-    text-align: center;
-    justify-content: center;
-    inset-block-start: 20px;
-    padding: var(--main-blok-padding);
   }
   
-  .decorated-zone-end::before {
-    margin-right: 20px;
-    margin-block-start: 20px;
-  }
-
-  .decorated-zone-end::after {
-    margin-bottom: 20px;
-    margin-left: 20px;
-  }
-
   .title-end {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     display: flex;
@@ -790,3 +718,4 @@ a:focus-visible {
     margin: auto;
   }
 }
+
