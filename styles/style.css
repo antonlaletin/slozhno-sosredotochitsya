@@ -282,11 +282,11 @@ a:focus-visible {
     margin-block-end: 35px;
   }
 
-  .decorated-zone::before{
+  .decorated-zone::before {
     margin-right: 14px;
   }
 
-  .small__element{
+  .small__element {
     margin-right: 42px;
   }
 
@@ -310,11 +310,11 @@ a:focus-visible {
     padding: 0 10px;
   }
 
-  .main-text{
+  .main-text {
     margin-block-end: 20px;
   }
 
-  .additional_indentation{
+  .additional_indentation {
     margin-block-start: 20px;
     margin-block-end: 20px;
   }
@@ -411,10 +411,6 @@ a:focus-visible {
     margin-block-start: 20px;
   }
 
-  .section-title {
-    margin-block-start: 20px;
-  }
-
   .main__page-block {
     --page-blok: 0 20px;
     padding: var(--page-blok);
@@ -424,6 +420,7 @@ a:focus-visible {
 
   .section-title {
     max-inline-size: 236px;
+    margin-block-start: 20px;
   }
 
   .information__page-block {
