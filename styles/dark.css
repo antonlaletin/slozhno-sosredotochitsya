@@ -23,3 +23,21 @@
 .theme_dark .small__element {
   display: block;
 }
+
+@media (prefers-color-scheme: dark) {
+  
+  :root {
+  --paragraph-color: #f1b2ce;
+  --large-main-color: #db00ff;
+  --subtitle-color: #000028;
+  --accent-color: #ff0070;
+  --accent-color-corner: #ff0070;
+  --dark-color: #ff0070;
+  --primary-font: 'IBM Plex mono';
+  --accent-color-body: #ff0070;
+  }
+
+  .page {
+    background-image: url(../images/cover-image-dark.png);
+  }
+}
