@@ -15,6 +15,7 @@
   --accent-color-corner: #343430;
   --dark-color: #ff0070;
   --accent-color: #343530;
+  --accent-color-cub: rgba(52,53,48, 0.40);
   --primary-font: 'IBM Plex mono';
   --accent-color-body: #ff8bcd;
   background-image: url(../images/cover-image-light.png);
@@ -46,4 +47,3 @@
     display: none
   }
 }
-
