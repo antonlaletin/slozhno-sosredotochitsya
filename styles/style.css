@@ -37,9 +37,10 @@
   border-block-end: 1px solid var(--accent-color-corner);
   border-inline-start: 1px solid var(--accent-color-corner);
   block-size: 25px;
+  bottom: 0;
   inline-size: 25px;
   margin-left: 20px;
-} 
+  margin-bottom: 20px;
 
 .heading {
   color: var(--large-main-color);
@@ -309,7 +310,6 @@ a:focus-visible {
   }
 
   .decorated-zone::after {
-    inset-block-start: 612px;
     margin-left: 10px;
   } 
 
@@ -408,8 +408,8 @@ a:focus-visible {
   }
 
   .decorated-zone::after {
-    inset-block-start: 998px;
     margin-left: 20px;
+    margin-bottom: 20px;
   } 
 
   .small__element {
@@ -591,10 +591,6 @@ a:focus-visible {
 
   .small__element {
     margin-top: -20px;
-  }
-  
-  .decorated-zone::after {
-    inset-block-start: 723px;
   }
 
   .header__theme-menu-list {
